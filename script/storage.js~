@@ -1,0 +1,28 @@
+function clickCounter()
+{
+if(typeof(Storage)!=="undefined")
+  {
+  if (localStorage.CustomerName)
+    {
+     	
+    document.getElementById("result").innerHTML = 'Hi,' + localStorage.CustomerName+'</n> Thanks for the review!!';
+	 localStorage.CustomerName = '';
+    }
+  else
+    {
+    localStorage.CustomerName = document.getElementById("name").value ;
+    }
+ }
+else
+  {
+  document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
+  }
+}
+
+window.onload=function(){ 
+
+	if (localStorage.CustomerName)
+    	{
+    		document.getElementById("result").innerHTML = 'Hi,' + localStorage.CustomerName+'</n> Thanks for the review!!';
+    	}
+};
